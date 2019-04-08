@@ -43,11 +43,21 @@ int main()
                 cout << addNumber << " added" << endl;
                 break; 
             }
-            
+            //mean should be a double not an integer
             case 'M':
             case 'm':
-            cout << "You chose m" << endl;
-            break;
+            {
+              int sum {0};
+              double average {0.0};
+              unsigned int count {1};
+              while(count - 1 < numberList.size()){
+                  sum += numberList.at(count-1);
+                  average = double(sum) / double(count);
+                  count++;
+              }
+              cout << "The mean is: " << average << endl;
+              break; 
+            }
             case 'S':
             case 's':
             cout << "You chose s" << endl;
