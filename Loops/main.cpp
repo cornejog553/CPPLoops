@@ -27,10 +27,11 @@ int main()
                 if(numberList.size() == 0){
                     cout << "[] - the list is empty" << endl << endl;
                 }else{
+                    cout << "[ ";
                     for(unsigned int count {0}; count < numberList.size(); count++){
-                    cout << "[ " << numberList.at(count);
+                    cout << numberList.at(count) << " ";
                 } 
-                cout <<" ]" << endl; 
+                cout <<"]" << endl; 
                 }
             break;
             case 'A':
@@ -60,12 +61,42 @@ int main()
             }
             case 'S':
             case 's':
-            cout << "You chose s" << endl;
-            break;
+            {
+                int smallestNumber {2};
+                unsigned int count {0};
+               while(count < numberList.size()) {
+                   if(count == 0){
+                       smallestNumber = numberList.at(0);
+                       count++;
+                   }else if(numberList.at(count) <= smallestNumber){
+                       smallestNumber = numberList.at(count);
+                       count++;
+                   }else{
+                       count++;
+                   }
+               }
+               cout << "The smallest number is: " << smallestNumber << endl;
+               break;
+            }
             case 'L':
             case 'l':
-            cout << "You chose l" << endl;
-            break;
+            {
+                int largestNumber {2};
+                unsigned int count {0};
+               while(count < numberList.size()) {
+                   if(count == 0){
+                       largestNumber = numberList.at(0);
+                       count++;
+                   }else if(numberList.at(count) >= largestNumber){
+                       largestNumber = numberList.at(count);
+                       count++;
+                   }else{
+                       count++;
+                   }
+               }
+               cout << "The largest number is: " << largestNumber << endl;
+               break;
+            }
             case 'Q':
             case 'q':
             cout << "Goodbye" << endl;
